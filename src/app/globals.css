@@ -12,3 +12,41 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* Set up some CSS variables to theme the application. */
+:root {
+  --nat-navbar-bg: darkblue;
+  --nat-navbar-bg-rgb: 0, 0, 139;
+  --nat-navbar-text-color: white;
+  --nat-navbar-highlight-text: khaki;
+}
+
+/* Change bootstrap variable values.
+ See https://getbootstrap.com/docs/5.2/customize/css-variables/
+ */
+body {
+  --bs-dark: var(--nat-navbar-bg);
+  --bs-dark-rgb: var(--nat-navbar-bg-rgb);
+  background: fixed center url("/images/cover.svg");
+  background-size: cover;
+}
+
+/* Footer text color */
+footer,
+footer a {
+  color: var(--nat-navbar-text-color);
+}
+
+/* Override navbar colors */
+body .navbar {
+  --bs-navbar-active-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--nat-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-color: var(--nat-navbar-text-color);
+  --bs-navbar-hover-color: var(--nat-navbar-highlight-text);
+}
+
+/* Dropdown item text color on dark background */
+.bg-dark a.dropdown-item {
+  color: var(--nat-navbar-bg);
+}
