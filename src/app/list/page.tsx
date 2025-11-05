@@ -10,7 +10,7 @@ const ListPage = async () => {
   const session = await getServerSession(authOptions);
   loggedInProtectedPage(session as { user: { email: string; id: string; randomKey: string } } | null);
   const owner = (session && session.user && session.user.email) || '';
-  const contacts = await prisma.contact.findMany({ where: { owner } });
+  const contacts = await prisma.contact.findMany({ where: { owner } }) as any[];
 
   return (
     <main>
@@ -23,11 +23,13 @@ const ListPage = async () => {
                 <Col key={`Contact-${c.id}`}>
                   <ContactCard
                     contact={{
+                      id: c.id,
                       firstName: c.firstName,
                       lastName: c.lastName,
                       address: c.address,
                       image: c.image,
                       description: c.description,
+                      owner: c.owner,
                     }}
                   />
                 </Col>

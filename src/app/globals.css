@@ -15,9 +15,6 @@ body {
   isolation: isolate;
   animation: pageFade 600ms ease 0ms 1 both;
 }
-<<<<<<< Updated upstream
-=======
-
 /* Set up some CSS variables to theme the application. */
 :root {
   --nat-navbar-bg: #0b2545;
@@ -59,18 +56,12 @@ body {
   position: fixed;
   inset: 0;
   z-index: -1;
-      :root {
-        /* Set up some CSS variables to theme the application. */
+}
+
 .wrapper::before {
   background:
     radial-gradient(circle at 10% 110%, var(--ocean-wave) 0 20%, transparent 21%) 0 0 / 220px 110px repeat-x,
     radial-gradient(circle at 30% 120%, var(--ocean-wave) 0 22%, transparent 23%) 0 22px / 260px 130px repeat-x,
-        /* Ocean theme */
-        --ocean-sky: #cfefff;
-        --ocean-sky-2: #e8f6ff;
-        --ocean-top: #8fd3fe;
-        --ocean-bottom: #005c97;
-        --ocean-wave: rgba(255, 255, 255, 0.25);
     radial-gradient(circle at 50% 115%, var(--ocean-wave) 0 18%, transparent 19%) 0 44px / 200px 100px repeat-x;
   opacity: 0.35;
   animation: waves-a 18s linear infinite;
