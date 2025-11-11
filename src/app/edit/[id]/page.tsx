@@ -1,33 +1,16 @@
-import { getServerSession } from 'next-auth';
-import { notFound } from 'next/navigation';
-import { Stuff } from '@prisma/client';
-import authOptions from '@/lib/authOptions';
-import { loggedInProtectedPage } from '@/lib/page-protection';
-import { prisma } from '@/lib/prisma';
-import EditStuffForm from '@/components/EditStuffForm';
+import Link from 'next/link';
 
-export default async function EditStuffPage({ params }: { params: { id: string | string[] } }) {
-  // Protect the page, only logged in users can access it.
-  const session = await getServerSession(authOptions);
-  loggedInProtectedPage(
-    session as {
-      user: { email: string; id: string; randomKey: string };
-      // eslint-disable-next-line @typescript-eslint/comma-dangle
-    } | null,
-  );
-  const id = Number(Array.isArray(params?.id) ? params?.id[0] : params?.id);
-  // console.log(id);
-  const stuff: Stuff | null = await prisma.stuff.findUnique({
-    where: { id },
-  });
-  // console.log(stuff);
-  if (!stuff) {
-    return notFound();
-  }
-
+export default async function EditPage() {
   return (
     <main>
-      <EditStuffForm stuff={stuff} />
+      <p>
+        The Edit page has been removed as part of the cleanup. Please use the
+      </p>
+      <p>
+        <Link href="/list">List Contacts</Link>
+        {' '}
+        page.
+      </p>
     </main>
   );
 }

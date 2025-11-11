@@ -1,14 +1,14 @@
-import { Stuff } from '@prisma/client';
-
-/* Renders a single row in the List Stuff table. See list/page.tsx. */
-const StuffItemAdmin = ({ name, quantity, condition, owner, id }: Stuff) => (
+/* Renders a single row (stub) to avoid import errors after cleanup. */
+const StuffItemAdmin = ({ name, quantity, condition, owner }: any) => (
   <tr>
     <td>{name}</td>
     <td>{quantity}</td>
     <td>{condition}</td>
     <td>{owner}</td>
     <td>
-      <a href={`/edit/${id}`}>Edit</a>
+      <button type="button" disabled>
+        Edit
+      </button>
     </td>
   </tr>
 );

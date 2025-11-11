@@ -29,17 +29,13 @@ model User {
   role     Role   @default(USER)
 }
 
-enum Condition {
-  excellent
-  good
-  fair
-  poor
+model Contact {
+  id          Int    @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  address     String
+  image       String
+  description String
+  owner       String
 }
 
-model Stuff {
-  id        Int       @id @default(autoincrement())
-  name      String
-  quantity  Int
-  condition Condition @default(good)
-  owner     String
-}

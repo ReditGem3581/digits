@@ -1,21 +1,16 @@
-import { getServerSession } from 'next-auth';
-import authOptions from '@/lib/authOptions';
-import { loggedInProtectedPage } from '@/lib/page-protection';
-import AddStuffForm from '@/components/AddStuffForm';
+import Link from 'next/link';
 
-const AddStuff = async () => {
-  // Protect the page, only logged in users can access it.
-  const session = await getServerSession(authOptions);
-  loggedInProtectedPage(
-    session as {
-      user: { email: string; id: string; randomKey: string };
-    } | null,
-  );
-  return (
-    <main>
-      <AddStuffForm />
-    </main>
-  );
-};
+const AddPage = async () => (
+  <main>
+    <p>
+      The Add page has been removed as part of the cleanup. Please use the
+    </p>
+    <p>
+      <Link href="/list">List Contacts</Link>
+      {' '}
+      page.
+    </p>
+  </main>
+);
 
-export default AddStuff;
+export default AddPage;

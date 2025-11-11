@@ -1,15 +1,10 @@
-import { Stuff } from '@prisma/client';
-import Link from 'next/link';
+import React from 'react';
 
-/* Renders a single row in the List Stuff table. See list/page.tsx. */
-const StuffItem = ({ name, quantity, condition, id }: Stuff) => (
+// Stub component retained for compatibility. The Stuff model was removed; this
+// component renders a placeholder row if used by any remaining references.
+const StuffItem = () => (
   <tr>
-    <td>{name}</td>
-    <td>{quantity}</td>
-    <td>{condition}</td>
-    <td>
-      <Link href={`/edit/${id}`}>Edit</Link>
-    </td>
+    <td colSpan={4}>Removed</td>
   </tr>
 );
 
